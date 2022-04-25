@@ -29,7 +29,6 @@ internal class PostsAdapter(
             binding,
             onButtonLikesClicked,
             onButtonRepostsClicked,
-            parent.context
         )
     }
 
@@ -37,7 +36,6 @@ internal class PostsAdapter(
         private val binding: PostBinding,
         onButtonLikesClicked: (Post) -> Unit,
         onButtonRepostsClicked: (Post) -> Unit,
-        private val context: Context
     ) : RecyclerView.ViewHolder(binding.root) {
 
         private lateinit var post: Post
@@ -66,29 +64,29 @@ internal class PostsAdapter(
 
             return when (number) {
                 0 -> ""
-                in 1..999 -> String.format(context.getString(R.string.numberOnes), number.toFloat())
+                in 1..999 -> String.format(itemView.context.getString(R.string.numberOnes), number.toFloat())
                 in 1_000..1_099 -> String.format(
-                    context.getString(R.string.numberThousands),
+                    itemView.context.getString(R.string.numberThousands),
                     getTruncatedNumber(number, 2, 1)
                 )
                 in 1_100..9_999 -> String.format(
-                    context.getString(R.string.numberThousandsAndHundreds),
+                    itemView.context.getString(R.string.numberThousandsAndHundreds),
                     getTruncatedNumber(number, 2, 1)
                 )
                 in 10_000..999_999 -> String.format(
-                    context.getString(R.string.numberThousands),
+                    itemView.context.getString(R.string.numberThousands),
                     getTruncatedNumber(number, 2, 1)
                 )
                 in 1_000_000..1_099_000 -> String.format(
-                    context.getString(R.string.numberMillions),
+                    itemView.context.getString(R.string.numberMillions),
                     getTruncatedNumber(number, 6, 1)
                 )
                 in 1_100_000..9_999_999 -> String.format(
-                    context.getString(R.string.numberMillionsAndThousands),
+                    itemView.context.getString(R.string.numberMillionsAndThousands),
                     getTruncatedNumber(number, 6, 1)
                 )
                 else -> String.format(
-                    context.getString(R.string.numberMillions),
+                    itemView.context.getString(R.string.numberMillions),
                     getTruncatedNumber(number, 6, 1)
                 )
             }
