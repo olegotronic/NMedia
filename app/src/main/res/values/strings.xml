@@ -11,7 +11,15 @@
 Убедитесь в этом сами → <a href="https://netolo.gy/h3m">https://netolo.gy/h3m</a></string>
     <string name="authorName" translatable="false">Нетология. Меняем карьеру через образование</string>
     <string name="postDate" translatable="false">4 апр в 10:31</string>
-    <string name="countViews" translatable="false">1000</string>
-    <string name="countLikes" translatable="false">1000</string>
-    <string name="countReposts" translatable="false">1000</string>
+    <string name="menu_remove">Remove</string>
+    <string name="post_text">Post text...</string>
+    <string name="description_post_save">Save...</string>
+    <string name="menu_edit">Edit</string>
+    <string name="edit_message">Edit message</string>
+    <string name="description_edit_cancel">Cancel</string>
+    <string name="views">Views</string>
+    <string name="likes">Likes</string>
+    <string name="reposts">Reposts</string>
+    <string name="options">Options</string>
+    <string name="chooser_share_post">Share post</string>
 </resources>
