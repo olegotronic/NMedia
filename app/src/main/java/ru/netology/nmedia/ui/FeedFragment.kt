@@ -49,16 +49,6 @@ class FeedFragment : Fragment() {
             startActivity(intent)
         }
 
-        setFragmentResultListener(
-            requestKey = PostEditFragment.REQUEST_KEY
-        ) { requestKey, bundle ->
-            if (requestKey != PostEditFragment.REQUEST_KEY) return@setFragmentResultListener
-            val newPostContent = bundle.getString(
-                PostEditFragment.RESULT_KEY
-            ) ?: return@setFragmentResultListener
-            viewModel.onButtonSaveClicked(newPostContent)
-        }
-
     }
 
     override fun onCreateView(
@@ -75,6 +65,17 @@ class FeedFragment : Fragment() {
         binding.fab.setOnClickListener {
             viewModel.onAddClicked()
         }
+
+        setFragmentResultListener(
+            requestKey = PostEditFragment.REQUEST_KEY
+        ) { requestKey, bundle ->
+            if (requestKey != PostEditFragment.REQUEST_KEY) return@setFragmentResultListener
+            val newPostContent = bundle.getString(
+                PostEditFragment.RESULT_KEY
+            ) ?: return@setFragmentResultListener
+            viewModel.onButtonSaveClicked(newPostContent)
+        }
+
     }.root
 
     companion object {
